@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cloud 80 x 40.png-3fb132bb79f6a36db8321a496024e96f.stex"
+path="res://.import/Power Up and Downs SpriteSheet.png-806cb203f121f077700f2e0779ae26cf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cloud 80 x 40.png"
-dest_files=[ "res://.import/Cloud 80 x 40.png-3fb132bb79f6a36db8321a496024e96f.stex" ]
+source_file="res://Art/Power Up and Downs SpriteSheet.png"
+dest_files=[ "res://.import/Power Up and Downs SpriteSheet.png-806cb203f121f077700f2e0779ae26cf.stex" ]
 
 [params]
 
