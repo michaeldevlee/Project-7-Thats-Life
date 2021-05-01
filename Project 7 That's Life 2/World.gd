@@ -4,8 +4,6 @@ var Beanstalk = load("res://Beanstalk.tscn")
 var LeftLeaf = load("res://LeftLeaf.tscn")
 var RightLeaf = load("res://RightLeaf.tscn")
 
-
-
 func _ready():
 	# Get size of window
 	var windowSize = get_viewport_rect().size
@@ -20,19 +18,6 @@ func _ready():
 		createBeanstalk(oneX, n)
 		createBeanstalk(twoX, n)
 		createBeanstalk(threeX, n)
-
-
-
-	
-#func _process(delta):
-#	var windowSize = get_viewport_rect().size
-##	print(windowSize)
-#	var windowX = windowSize.x
-#	var windowY = windowSize.y
-#	var oneX = windowX / 32
-#	var oneY = windowY
-#
-#	createBeanstalk(oneX, 0)
 
 func createBeanstalk(posX, posY):
 	var beanstalkInstance = Beanstalk.instance()
@@ -71,12 +56,16 @@ func createRightLeaf(leafX, leafY):
 	add_child(rightLeafInstance)
 
 
-
-
-
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+	
+#func _process(delta):
+#	var windowSize = get_viewport_rect().size
+##	print(windowSize)
+#	var windowX = windowSize.x
+#	var windowY = windowSize.y
+#	var oneX = windowX / 32
+#	var oneY = windowY
+#
+#	createBeanstalk(oneX, 0)
