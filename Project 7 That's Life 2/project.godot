@@ -15,24 +15,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Project 7 That's Life"
-<<<<<<< HEAD
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+<<<<<<<HEADrun/main_scene="res://World.tscn"
 
 [autoload]
 
 Global="*res://Global.gd"
-=======
-run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
-
-[display]
-
-window/size/width=320
-window/size/height=180
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
->>>>>>> cc0ad4d1f1efc15fb4085e750e8691419e5f21c6
 
 [rendering]
 

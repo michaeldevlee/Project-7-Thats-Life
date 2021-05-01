@@ -20,3 +20,4 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1024, 600 )
 
 [node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 203.647, 1001.26 )
