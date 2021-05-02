@@ -56,16 +56,12 @@ func createRightLeaf(leafX, leafY):
 	add_child(rightLeafInstance)
 
 
+func win():
+	get_tree().change_scene("res://Finish.tscn")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-	
-#func _process(delta):
-#	var windowSize = get_viewport_rect().size
-##	print(windowSize)
-#	var windowX = windowSize.x
-#	var windowY = windowSize.y
-#	var oneX = windowX / 32
-#	var oneY = windowY
-#
-#	createBeanstalk(oneX, 0)
+func _physics_process(delta):
+	var playerPos = get_node("../Player").get_position()
+	if(playerPos[1] <= -2297):
+		win()
+		

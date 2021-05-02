@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/James_Lee_-_Main_Menu.ogg-12c84613a225db9ee3ae98eec88e79f1.oggstr"
+
+[deps]
+
+source_file="res://Music/James_Lee_-_Main_Menu.ogg"
+dest_files=[ "res://.import/James_Lee_-_Main_Menu.ogg-12c84613a225db9ee3ae98eec88e79f1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

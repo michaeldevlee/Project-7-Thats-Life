@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/James_Lee_-_New_Project_original_6.ogg-59f16af3221edd1fe2ea49041902914d.oggstr"
+
+[deps]
+
+source_file="res://Music/James_Lee_-_New_Project_original_6.ogg"
+dest_files=[ "res://.import/James_Lee_-_New_Project_original_6.ogg-59f16af3221edd1fe2ea49041902914d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
