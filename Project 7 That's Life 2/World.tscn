@@ -1,46 +1,111 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Art/Cloud 80 x 40.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Art/Blue Sky Background.png" type="Texture" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://Art/Sample Spritesheet.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.0792, 32.8569 )
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
 
-[node name="World" type="Node2D"]
+[sub_resource type="Animation" id=4]
+resource_name = "Jump"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walk"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 3, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 14.7477
+height = 55.6611
+
+[node name="Main" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
 position = Vector2( 300, 600 )
 script = ExtResource( 1 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
 
-[node name="Sky" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 534.27, 303.091 )
+[node name="Sky" type="Sprite" parent="World/ParallaxBackground"]
+position = Vector2( 533.476, 303.091 )
 scale = Vector2( 3.23341, 3.38897 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1024, 600 )
 
-[node name="Cloud" type="Sprite" parent="ParallaxBackground"]
+[node name="Cloud" type="Sprite" parent="World/ParallaxBackground"]
 position = Vector2( 156.801, 177.99 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="ParallaxBackground"]
-position = Vector2( 437.416, 308.508 )
+[node name="Background" type="ParallaxLayer" parent="World/ParallaxBackground"]
+motion_mirroring = Vector2( 1024, 600 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 437.416, 226.102 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/KinematicBody2D"]
-texture = ExtResource( 3 )
+[node name="Player" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 44.6855, 147.868 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+vframes = 2
+hframes = 3
+frame = 5
+region_rect = Rect2( 14, 6.204, 13, 25.796 )
 
-[node name="Camera" type="Camera2D" parent="ParallaxBackground/KinematicBody2D/Sprite"]
-position = Vector2( 98.8785, 1183.81 )
-offset = Vector2( 0, -5400 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D/Player"]
+anims/Idle = SubResource( 2 )
+anims/Jump = SubResource( 4 )
+anims/Walk = SubResource( 3 )
+
+[node name="Camera" type="Camera2D" parent="KinematicBody2D/Player"]
+position = Vector2( -5.08087, -6.43839 )
+scale = Vector2( 0.333333, 0.333333 )
 current = true
+zoom = Vector2( 1.5, 1.5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/KinematicBody2D"]
-shape = SubResource( 1 )
-
-[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1024, 600 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 48.8219, 147.411 )
+shape = SubResource( 5 )

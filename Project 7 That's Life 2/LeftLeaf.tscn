@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Art/Leaf.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.4758, 3.00741 )
 
 [node name="LeftLeaf" type="Sprite"]
 position = Vector2( -3.1498, 1.25992 )
@@ -8,7 +11,8 @@ scale = Vector2( 1.01575, 1 )
 texture = ExtResource( 1 )
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( -1.12815, 3.36427, -24.5965, 7.60212, -21.9889, -5.11143, -8.95093, -10.4088, 10.8668, -6.1709, 20.2541, 0.715607, 13.9959, 7.60212 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.174032, 1.23744 )
+shape = SubResource( 1 )
