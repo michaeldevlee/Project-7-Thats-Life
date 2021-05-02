@@ -75,7 +75,8 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1024, 600 )
 
 [node name="Background" type="ParallaxLayer" parent="World/ParallaxBackground"]
-motion_mirroring = Vector2( 1024, 600 )
+position = Vector2( 88, -164 )
+motion_mirroring = Vector2( 2048, 800 )
 
 [node name="Cloud" type="Sprite" parent="World/ParallaxBackground/Background"]
 position = Vector2( 156.801, 177.99 )

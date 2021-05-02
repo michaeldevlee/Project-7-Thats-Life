@@ -22,7 +22,8 @@ setting up when the animations would play. I could always just copy
 what I have done before and be done with it. Don't waste time trying
 to reinvent the wheel (is_on_floor() is always returning false for some reason
 and I have no idea why, I set up the collisions correctly and both bodies are
-on the same layer)
+on the same layer) --> SOLUTION YOU HAVE TO SET UP MOVE AND SLIDE AND SET PARAMETER:
+UP_DIRECTION TO HAVE IS_ON_FLOOR() WORK
 - reminded of passing in parameters into functions to dynamically manipulate
 stuff
 - Always consider the middle of the sprite when considering position of sprites
