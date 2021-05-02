@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/James_Lee_-_Finish_Line.ogg-10e5121d875583188b6c81069b21040e.oggstr"
+
+[deps]
+
+source_file="res://Music/James_Lee_-_Finish_Line.ogg"
+dest_files=[ "res://.import/James_Lee_-_Finish_Line.ogg-10e5121d875583188b6c81069b21040e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
